@@ -1,0 +1,37 @@
+/*
+ 对配置的读取，没有十分严格的格式语法检测机制，若使用错误的格式或语法，将产生未知的错误
+*/
+
+一:
+Arthur-System 支持的配置格式
+1. block
+BLOCK-NAME {
+    PARAMETER1=123;
+    PARAMETER2="text";   
+    PARAMETER3='text';
+    PARAMETER4=123, 123, 123;
+    PARAMETER5="text", "text", "text";
+    PARAMETER6='text', 'text', 'text';
+    PARAMETER7=123, 123, 123, \                 (换行符号前后的空格与tab将被忽略)            
+                321, 321;
+    PARAMETER8="texttexttexttext \              (换行符号前后的空格与tab将被忽略)
+                texttext";                      (如若是字符串，应注意)
+}
+
+2. normal style
+PARAMETER1=123;
+PARAMETER2="text";   
+PARAMETER3='text';
+PARAMETER4=123, 123, 123;
+PARAMETER5="text", "text", "text";
+PARAMETER6='text', 'text', 'text';
+PARAMETER7=123, 123, 123, \                     (换行符号前后的空格与tab将被忽略)
+                321, 321;
+PARAMETER8="texttexttexttext \                  (换行符号前后的空格与tab将被忽略)
+                texttext";                      (如若是字符串，应注意)
+
+三：
+注释格式：
+#注释内容 ....
+换行即结束注释
+/* 注释必须独占一行，不可与数据同行 */

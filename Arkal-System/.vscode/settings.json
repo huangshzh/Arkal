@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "art_core.h": "c",
+        "art_str.h": "c"
+    }
+}
